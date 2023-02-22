@@ -11,3 +11,14 @@ CREATE TABLE animals (
 
 ALTER TABLE animals
 ADD COLUMN species TEXT;
+
+CREATE TABLE owners (
+	id serial primary KEY,
+	full_name text NOT null,
+	age integer NOT NULL
+);
+
+CREATE TABLE species (
+	id serial primary KEY,
+	"name" text NOT NULL
+);
