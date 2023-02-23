@@ -33,3 +33,15 @@ ALTER TABLE animals
 ADD FOREIGN KEY (species_id) REFERENCES species(id);
 ALTER TABLE animals
 ADD FOREIGN KEY (owner_id) REFERENCES owners(id);
+
+CREATE TABLE specializations (
+	vet_id integer NOT NULL REFERENCES vets(id),
+	species_id integer NOT NULL REFERENCES species(id),
+	PRIMARY KEY (vet_id, species_id)
+);
+
+CREATE TABLE visits (
+	vet_id integer NOT NULL REFERENCES vets(id),
+	animal_id integer NOT NULL REFERENCES animals(id),
+	PRIMARY KEY (vet_id, animal_id)
+);
