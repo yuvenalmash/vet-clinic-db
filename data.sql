@@ -68,20 +68,41 @@ UPDATE animals SET owner_id = 2 WHERE name = 'Gabumon' OR name = 'Pikachu';
 UPDATE animals SET owner_id = 3 WHERE name = 'Devimon' OR name = 'Plantmon';
 UPDATE animals SET owner_id = 4 WHERE name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom';
 
-INSERT INTO vets ("name", age, date_of_graduation)
-VALUES('William Tatcher', 45, '2000-04-23');
-INSERT INTO vets ("name", age, date_of_graduation)
-VALUES('Maisy Smith', 26, '2019-01-17');
-INSERT INTO vets ("name", age, date_of_graduation)
-VALUES('Stephanie Mendez', 64, '1981-05-04');
-INSERT INTO vets ("name", age, date_of_graduation)
-VALUES('Jack Harkness', 38, '2008-06-08');
+INSERT INTO vets 
+  ("name", age, date_of_graduation)
+VALUES
+  ('William Tatcher', 45, '2000-04-23'),
+  ('Maisy Smith', 26, '2019-01-17'),
+  ('Stephanie Mendez', 64, '1981-05-04'),
+  ('Jack Harkness', 38, '2008-06-08');
 
-INSERT INTO specializations (vet_id, species_id)
-VALUES(1,1);
-INSERT INTO specializations (vet_id, species_id)
-VALUES(3,1);
-INSERT INTO specializations (vet_id, species_id)
-VALUES(3,2);
-INSERT INTO specializations (vet_id, species_id)
-VALUES(4,2);
+INSERT INTO specializations
+  (vet_id, species_id)
+VALUES
+  (1,1),
+  (3,1),
+  (4,2);
+
+INSERT INTO visits
+  (vet_id, animal_id, visit_date)
+VALUES
+  (1, 1, '2020-05-24'),
+  (3, 1, '2020-07-22'),
+  (4, 2, '2021-02-02'),
+  (2, 3, '2020-01-05'),
+  (2, 3, '2020-03-08'),
+  (2, 3, '2020-05-14'),
+  (3, 4, '2021-05-04'),
+  (4, 7, '2021-02-24'),
+  (2, 8, '2019-12-21'),
+  (1, 8, '2020-08-10'),
+  (2, 8, '2021-04-07'),
+  (3, 9, '2019-09-29'),
+  (4, 10, '2020-10-03'),
+  (4, 10, '2020-11-04'),
+  (2, 11, '2019-01-24'),
+  (2, 11, '2019-05-15'),
+  (2, 11, '2020-02-27'),
+  (2, 11, '2020-08-03'),
+  (3, 12, '2020-05-24'),
+  (1, 12, '2021-01-11');
