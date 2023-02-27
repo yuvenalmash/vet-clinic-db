@@ -81,10 +81,10 @@ ORDER BY num_animals DESC
 LIMIT 1;
 
 -- Who was the last animal seen by William Tatcher?
-SELECT animals.name, visits.visit_date FROM visits
+SELECT animals.name, visits.date_of_visit FROM visits
 INNER JOIN animals ON visits.animal_id = animals.id
 WHERE visits.vet_id = 1
-ORDER BY visits.visit_date DESC
+ORDER BY visits.date_of_visit DESC
 LIMIT 1;
 -- How many different animals did Stephanie Mendez see?
 SELECT COUNT(DISTINCT visits.animal_id)
@@ -95,12 +95,12 @@ LEFT JOIN specializations ON vets.id = specializations.vet_id
 LEFT JOIN species ON specializations.species_id = species.id
 ORDER BY vets.id;
 -- List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
-SELECT animals.name, visits.visit_date FROM visits
+SELECT animals.name, visits.date_of_visit FROM visits
 INNER JOIN animals ON visits.animal_id = animals.id
 WHERE visits.vet_id = 3
-AND visits.visit_date >= '2020-04-01'
-AND visits.visit_date <= '2020-08-30'
-ORDER BY visits.visit_date;
+AND visits.date_of_visit >= '2020-04-01'
+AND visits.date_of_visit <= '2020-08-30'
+ORDER BY visits.date_of_visit;
 -- What animal has the most visits to vets?
 SELECT animals.name, COUNT(visits.*) as num_visits FROM animals
 LEFT JOIN visits ON animals.id = visits.animal_id
@@ -108,18 +108,18 @@ GROUP BY animals.name
 ORDER BY num_visits DESC
 LIMIT 1;
 -- Who was Maisy Smith's first visit?
-SELECT animals.name, MIN(visits.visit_date) AS first_visit
+SELECT animals.name, MIN(visits.date_of_visit) AS first_visit
 FROM visits JOIN animals ON visits.animal_id = animals.id
 WHERE visits.vet_id = 2
 GROUP BY animals.name
 ORDER BY first_visit
 LIMIT 1;
 -- Details for most recent visit: animal information, vet information, and date of visit.
-SELECT animals.name, vets.name, visits.visit_date FROM visits
+SELECT animals.name, vets.name, visits.date_of_visit FROM visits
 JOIN animals ON visits.animal_id = animals.id
 JOIN vets ON visits.vet_id = vets.id
-WHERE visits.visit_date = (
-  SELECT MAX(visit_date)
+WHERE visits.date_of_visit = (
+  SELECT MAX(date_of_visit)
   FROM visits
 );
 -- How many visits were with a vet that did not specialize in that animal's species?
@@ -137,3 +137,8 @@ WHERE visits.vet_id = 2
 GROUP BY species.name
 ORDER BY num_visits DESC
 LIMIT 1;
+
+-- performance analysis queries
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
