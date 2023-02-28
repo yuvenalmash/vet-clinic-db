@@ -6,6 +6,8 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 \[vet-clinic-db\] ](#-vet-clinic-db-)
+  - [Database diagrams](#database-diagrams)
+    - [Schema](#schema)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -25,6 +27,11 @@
 # 📖 [vet-clinic-db] <a name="about-project"></a>
 
 **[vet-clinic-db]** is a program that creates a data base for a vet clinic.
+## Database diagrams
+### Schema
+<!-- Schema -->
+<img title="Schema" alt="schema diagram" src="/images/schema.png">
+![schema diagram](images/schema.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 - postgresql
@@ -36,9 +43,7 @@
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
-<!-- Schema -->
-![Schema diagram](/images/schema.png "Schema")
-<img title="Schema" alt="schema diagram" src="/images/schema.png">
+
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
