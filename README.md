@@ -36,7 +36,8 @@
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
-
+<!-- Schema -->
+![Schema diagram](/images/schema.png "Schema")
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
