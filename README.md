@@ -38,6 +38,7 @@
 </details>
 <!-- Schema -->
 ![Schema diagram](/images/schema.png "Schema")
+<img title="Schema" alt="schema diagram" src="/images/schema.png">
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
