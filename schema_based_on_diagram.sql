@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS patients (
+  id INT GENERATED ALWAYS AS IDENTITY,
+  "name" VARCHAR(20),
+  date_of_birth DATE
+  PRIMARY KEY(id)
+);
