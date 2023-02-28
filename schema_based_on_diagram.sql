@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS treatments (
   "name" VARCHAR
 );
 
-CREATE TABLE IF NOT EXISTS medical_history_treatment (
+CREATE TABLE IF NOT EXISTS join_medical_history_treatment (
   id INT GENERATED ALWAYS AS IDENTITY,
   medical_history_id INTEGER REFERENCES medical_histories(id),
   treatment_id INTEGER REFERENCES treatments(id),
