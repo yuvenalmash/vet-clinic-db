@@ -18,5 +18,12 @@ CREATE TABLE IF NOT EXISTS invoices (
   total_amount DECIMAL,
   generated_at TIMESTAMP,
   payed_at TIMESTAMP,
-  medical_history_id INT REFERENCES medical_histories(id)
+  medical_history_id INT REFERENCES medical_histories(id),
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS treatments (
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  "type" VARCHAR,
+  "name" VARCHAR
 );
