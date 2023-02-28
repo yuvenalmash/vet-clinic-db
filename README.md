@@ -31,7 +31,6 @@
 ### Schema
 <!-- Schema -->
 <img title="Schema" alt="schema diagram" src="/images/schema.png">
-![schema diagram](images/schema.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 - postgresql
