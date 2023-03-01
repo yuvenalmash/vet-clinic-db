@@ -75,10 +75,30 @@ Clone this repository to your desired folder:
 
 ### Usage
 
-To run the project, execute the following:
-```sh
-  createdb vet_clinic
+1. Connect to your PostgreSQL server with `psql`
 ```
+> psql
+postgres=#
+```
+
+2. Create the database `vet_clinic`
+```
+postgres=# CREATE DATABASE vet_clinic;
+CREATE DATABASE
+```
+
+3. Connect to your database vet_clinic. Inside your current session do:
+```
+postgres=# \c vet_clinic
+You are now connected to database "vet_clinic" as user "postgres".
+vet_clinic=#
+```
+
+You have created your database and connected to it. Next, add a table.
+
+- Use [schema.sql](./schema.sql) to create all tables.
+- Use [data.sql](./data.sql) to populate tables with sample data.
+- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
