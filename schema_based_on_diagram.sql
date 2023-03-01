@@ -34,3 +34,11 @@ CREATE TABLE IF NOT EXISTS join_medical_history_treatment (
   treatment_id INTEGER REFERENCES treatments(id),
   PRIMARY KEY (medical_history_id, treatment_id)
 );
+
+CREATE INDEX patient_id_asc ON mediacal_histories(patient_id);
+CREATE INDEX mediacal_history_id_asc ON invoices(mediacal_history_id);
+CREATE INDEX invoice_id_asc ON invoice_items(invoice_id);
+CREATE INDEX treatment_id_asc ON invoice_items(treatment_id);
+CREATE INDEX mediacal_histories_id_asc ON mediacal_histories_treatments(mediacal_histories_id);
+CREATE INDEX treatments_id_asc ON mediacal_histories_treatments(treatments_id);
+
